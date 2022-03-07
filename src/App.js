@@ -1,25 +1,93 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { BlogContext } from "./BlogContext.js"
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MainPage from "./view/homepage/MainPage.js"
+import { makeStyles } from '@mui/styles';
+import PrimarySearchAppBar from "./components/NavBar.js";
+import "./App.css"
+import { Divider } from "@mui/material";
+import Typography from '@mui/material/Typography';
 
-function App() {
+
+const { createContext, useState } = React;
+
+const ThemeContext = createContext(null);
+
+function Content() {
+  const { style, visible, toggleStyle, toggleVisible } = useContext(
+    ThemeContext
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>
+        The theme is <em>{style}</em> and state of visibility is
+        <em> {visible.toString()}</em>
+      </p>
+      <button onClick={toggleStyle}>Change Theme</button>
+      <button onClick={toggleVisible}>Change Visibility</button>
     </div>
   );
 }
+const useStyles = makeStyles({
+  MainContainer: {
+    backgroundColor: "white",
+    marginTop: "100px !important",
+    marginRight: "50px",
+    marginLeft: "50px",
+    padding: "10px",
+    minWidth: "600px",
+    padding: "20px",
+    height: "700px"
 
-export default App;
+    // marginLeft:"300px"
+
+  },
+
+})
+
+export default function App() {
+  const [style, setStyle] = useState("light");
+  const [visible, setVisible] = useState(true);
+  const { user } = useContext(BlogContext);
+  const classes = useStyles();
+
+
+
+
+  function toggleStyle() {
+    setStyle(style => (style === "light" ? "dark" : "light"));
+  }
+  function toggleVisible() {
+    setVisible(visible => !visible);
+  }
+
+  return (
+    <ThemeContext.Provider
+      value={{ style, visible, toggleStyle, toggleVisible }}
+    >
+      <Box >
+
+        <Paper elevation="3" className={classes.MainContainer}  >
+          <PrimarySearchAppBar></PrimarySearchAppBar>
+          <Divider sx={{marginBottom:"20px"}}/>
+
+
+          <MainPage>
+
+
+          </MainPage>
+
+
+        </Paper>
+
+
+
+
+      </Box>
+
+    </ThemeContext.Provider>
+  );
+}
