@@ -9,6 +9,9 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
     imageContainer: {
         width:"100%",
+        height:"400px !important",
+        marginBottom:"30px"
+        
     },
     image:{
         objectFit:"cover",

@@ -34,7 +34,7 @@ function Content() {
 const useStyles = makeStyles({
   MainContainer: {
     
-    margin: "100px 50px ",
+    margin: "50px 50px ",
     display:"flex",
     flexDirection:"column"
     
@@ -68,8 +68,7 @@ export default function App() {
           <PrimarySearchAppBar></PrimarySearchAppBar>
           <Divider sx={{marginBottom:"20px"}}/>
           <MainPage>
-
-
+            
           </MainPage>
 
 

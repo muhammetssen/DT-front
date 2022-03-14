@@ -5,18 +5,9 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
 
-import Divider from '@mui/material/Divider';
+
+import {Divider,Card} from '@mui/material/';
 
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -31,9 +22,11 @@ const useStyles = makeStyles({
         padding: "20px",
         display:"flex",
         alignItems:"center",
-        flexDirection:"column"
-       
-
+        flexDirection:"column",
+        boxSizing: 'border-box',
+        marginTop:"8px",
+        boxSizing: 'border-box',
+        minWidth:"fit-content"
     },
 
 })
@@ -45,13 +38,11 @@ export default function Categories() {
 
 
     return (
-        <Box className={classes.Categories}>
+        <Card className={classes.Categories}>
             <Typography variant="h5"><b>Categories</b></Typography>
             <Divider />
-            <List>
-
+            <List sx={{ }}>
                 <ListItem button >
-
                     <ListItemText primary={"tool.name"} />
                 </ListItem>
                 <ListItem button >
@@ -67,6 +58,6 @@ export default function Categories() {
             </List>
 
 
-        </Box>
+        </Card>
     );
 }
