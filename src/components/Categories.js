@@ -28,13 +28,11 @@ import { List } from '@mui/material/';
 
 const useStyles = makeStyles({
     Categories: {
-        border: "2px solid grey",
-        borderRadius:"10px",
         padding: "20px",
         display:"flex",
         alignItems:"center",
         flexDirection:"column"
-        // marginLeft:"300px"
+       
 
     },
 
@@ -52,15 +50,15 @@ export default function Categories() {
             <Divider />
             <List>
 
-                <ListItem button key={"tool.enum"}>
+                <ListItem button >
 
                     <ListItemText primary={"tool.name"} />
                 </ListItem>
-                <ListItem button key={"tool.enum"}>
+                <ListItem button >
 
                     <ListItemText primary={"tool.name"} />
                 </ListItem>
-                <ListItem button key={"tool.enum"}>
+                <ListItem button >
 
                     <ListItemText primary={"tool.name"} />
                 </ListItem>

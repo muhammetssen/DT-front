@@ -33,17 +33,11 @@ function Content() {
 }
 const useStyles = makeStyles({
   MainContainer: {
-    backgroundColor: "white",
-    marginTop: "100px !important",
-    marginRight: "50px",
-    marginLeft: "50px",
-    padding: "10px",
-    minWidth: "600px",
-    padding: "20px",
-    height: "700px"
-
-    // marginLeft:"300px"
-
+    
+    margin: "100px 50px ",
+    display:"flex",
+    flexDirection:"column"
+    
   },
 
 })
@@ -73,8 +67,6 @@ export default function App() {
         <Paper elevation="3" className={classes.MainContainer}  >
           <PrimarySearchAppBar></PrimarySearchAppBar>
           <Divider sx={{marginBottom:"20px"}}/>
-
-
           <MainPage>
 
 
