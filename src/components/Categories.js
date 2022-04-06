@@ -19,7 +19,6 @@ import { List } from '@mui/material/';
 
 const useStyles = makeStyles({
     Categories: {
-        padding: "20px",
         display:"flex",
         alignItems:"center",
         flexDirection:"column",
@@ -34,7 +33,6 @@ const useStyles = makeStyles({
 
 export default function Categories() {
     const classes = useStyles();
-
 
 
     return (

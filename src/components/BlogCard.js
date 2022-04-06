@@ -35,14 +35,7 @@ subheader:{
 
 export default function BlogCard({airline}) {
 const classes=useStyles()
-const [info,setInfo]=React.useState(false)
-const handleHover=()=>{
-  setInfo(true)
-}
-const handleOut=()=>{
-  setInfo(false)
 
-}
   return (
     <Card  sx={{ maxWidth: 345,marginBottom:5 }}>
       <CardActionArea>

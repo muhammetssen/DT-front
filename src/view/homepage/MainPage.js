@@ -11,7 +11,7 @@ import Banner from '../../components/Banner';
 import { Toolbar } from '@mui/material';
 import BlogCard from '../../components/BlogCard';
 export default function MainPage() {
-    const airlineList=[
+    const airlineList = [
         {
             "site": "https://subus.cl/",
             "code": "SUBUS",
@@ -22,8 +22,8 @@ export default function MainPage() {
             "__clazz": "com.r9.harmony.httpd.mobileapis.AirlineMobile",
             "defaultName": null,
             "logoURL": "/rimg/provider-logos/airlines/v/SUBUS.png?crop=false&width=108&height=92&fallback=default1.png&_v=cf7f153576dad48e814135373e3baf34"
-          },
-          {
+        },
+        {
             "site": "sitasudtrasporti.it",
             "code": "SITASUD",
             "alliance": "none",
@@ -33,8 +33,8 @@ export default function MainPage() {
             "__clazz": "com.r9.harmony.httpd.mobileapis.AirlineMobile",
             "defaultName": null,
             "logoURL": "/rimg/provider-logos/airlines/v/SITASUD.png?crop=false&width=108&height=92&fallback=default3.png&_v=8e634b2affd75b43a2cb1f32d857ccc2"
-          },
-          {
+        },
+        {
             "site": "https://www.avianca.com.ar",
             "code": "A0",
             "alliance": "none",
@@ -44,12 +44,12 @@ export default function MainPage() {
             "__clazz": "com.r9.harmony.httpd.mobileapis.AirlineMobile",
             "defaultName": null,
             "logoURL": "/rimg/provider-logos/airlines/v/A0.png?crop=false&width=108&height=92&fallback=default3.png&_v=67161f869e5c5d2f83dc8b38b95a7551"
-          },
+        },
     ]
 
     const useStyles = makeStyles({
         MainPage: {
-            height:"fit-content"
+            height: "fit-content"
 
         },
         wrapper: {
@@ -61,13 +61,13 @@ export default function MainPage() {
             alignItems: "center",
             margin: "0 20px"
         },
-        cardWrapper:{
-            display:"flex",
-            width:"100%",
-            flexDirection:"row",
-            flexWrap:"wrap",
-            padding:"0px",
-            justifyContent:"space-between"
+        cardWrapper: {
+            display: "flex",
+            width: "100%",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            padding: "0px",
+            justifyContent: "space-between"
         }
     })
     const classes = useStyles();
@@ -76,35 +76,25 @@ export default function MainPage() {
 
     return (
         <>
-            <Box className={classes.wrapper}>
-                <Grid container className={classes.MainPage} spacing={2}>
-                    <Grid item className={classes.side} xs={2}>
-                        <Toolbar />
-                        <Categories></Categories>
-                    </Grid>
-                    <Grid item xs={10}  >
-                        <Box className={classes.content}>
-                            <Typography variant="h2">Bugünün Yazıları</Typography>
-                            <Banner></Banner>
-                            <Box className={classes.cardWrapper}>
+            <Box className={classes.content}>
+                <Typography variant="h2">Bugünün Yazıları</Typography>
+                <Banner></Banner>
+                <Box className={classes.cardWrapper}>
 
-                            { airlineList.map((key,index)=>{
-                                {     
-                                    return <BlogCard className={classes.card}  airline={key}/>
-                                }
-                            })}
-                           
-                            </Box>
-                        </Box>
-                    </Grid>
-                </Grid>
-            </Box>
+                    {airlineList.map((key, index) => {
+                        {
+                            return <BlogCard className={classes.card} airline={key} />
+                        }
+                    })}
+
+                </Box>
+                </Box>
 
 
 
 
-        </>
+            </>
 
 
-    );
+            );
 }
